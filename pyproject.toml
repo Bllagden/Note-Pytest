@@ -5,8 +5,26 @@ description = ""
 authors = [
     {name = "Bllagden", email = "bllagden99@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "sqlalchemy>=2.0.23",
+    "psycopg[binary,pool]>=3.1.16",
+    "pydantic>=2.5.3",
+    "pydantic-settings>=2.1.0",
+]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.1.9",
+    "black>=23.12.1",
+    "isort>=5.13.2",
+    "pytest>=7.4.3",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
